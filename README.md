@@ -8,6 +8,8 @@ RTSC Soccer Wizard is a coach-focused scouting and schedule viewer for Rose Tree
 
 Actually tracked teams are limited and curated manually.  To request another RTSC team, contact me.
 
+[View Online](https://wheilala.github.io/rtsc-soccer-wizard/)
+
 ## Usage
 
 Local Soccer Wizard is intended to help RTSC coaches scout upcoming opponents by understanding recent competition, recent performance, and schedule context with lightweight automated insights.
