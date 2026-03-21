@@ -4,11 +4,13 @@ GitHub Pages host repository for published static projects.
 
 ## RTSC Soccer Wizard
 
-RTSC Soccer Wizard is a coach-focused scouting and schedule viewer for Rose Tree SC teams.
+RTSC Soccer Wizard is a coach-focused scouting and schedule viewer for Rose Tree SC teams, meant to automate some GotSport team/schedule research for you.
+
+Actually tracked teams are limited and curated manually.  To request another RTSC team, contact me.
 
 ## Usage
 
-Local Soccer Wizard is intended to help coaches scout upcoming opponents by understanding recent competition, recent performance, and schedule context with lightweight automated insights.
+Local Soccer Wizard is intended to help RTSC coaches scout upcoming opponents by understanding recent competition, recent performance, and schedule context with lightweight automated insights.
 
 1. Select the RTSC team of interest.
 2. Upcoming games and prior results for the selected team are shown by default.
@@ -18,12 +20,4 @@ Local Soccer Wizard is intended to help coaches scout upcoming opponents by unde
 
 ## Source Workflow
 
-The source application lives in:
-
-- `C:\Users\wayne\Documents\LocalSoccerWizard`
-
-Export the latest static site from the app repo with:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\export-github-pages-site.ps1
-```
+The source application lives on a private server and periodically publishes a site package for viewing on GitHub pages here.
