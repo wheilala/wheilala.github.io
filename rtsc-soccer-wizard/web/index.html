@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Soccer Wizard</title>
+    <link rel="icon" type="image/jpeg" href="../images/logo.jpg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="../images/logo.jpg" alt="" />
+        </div>
+        <div class="brand-copy">
+          <span class="brand-name">Local Soccer Wizard</span>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="mobile-sidebar-toggle"
+        id="mobile-sidebar-toggle"
+        aria-controls="app-sidebar"
+        aria-expanded="false"
+        aria-label="Browse teams"
+        >
+        &#9776;
+      </button>
+      <nav class="anchor-nav" id="anchor-nav" aria-label="Anchor teams"></nav>
+    </header>
+
+    <div class="page-shell">
+      <aside class="sidebar" id="app-sidebar">
+        <div class="sidebar-header">
+          <p class="anchor-highlight" id="sidebar-anchor-name"></p>
+          <button type="button" class="mobile-sidebar-close" id="mobile-sidebar-close" aria-label="Close browse panel">Close</button>
+        </div>
+
+        <div class="sidebar-home">
+          <button type="button" class="home-nav-button" id="home-nav-button">Home</button>
+        </div>
+
+        <section class="sidebar-section sidebar-switcher" id="sidebar-switcher">
+          <h3>Switch Teams</h3>
+          <div id="sidebar-anchor-switch"></div>
+        </section>
+
+        <div class="sidebar-sections">
+          <section class="sidebar-section">
+            <h3>Next 5</h3>
+            <div id="upcoming-team-list" class="sidebar-link-list"></div>
+          </section>
+          <section class="sidebar-section">
+            <h3>Past 5</h3>
+            <div id="recent-team-list" class="sidebar-link-list"></div>
+          </section>
+          <section class="sidebar-section">
+            <h3>All Opponents</h3>
+            <div class="sidebar-section-search">
+              <input id="team-search" class="search-input" type="search" placeholder="Search opponents" />
+            </div>
+            <div id="all-team-list" class="sidebar-link-list"></div>
+          </section>
+        </div>
+        <div class="dataset-meta" id="dataset-meta">Loading dataset...</div>
+      </aside>
+      <button type="button" class="mobile-sidebar-backdrop" id="mobile-sidebar-backdrop" aria-label="Close browse panel" hidden></button>
+
+      <main class="content">
+        <section class="hero" id="hero">
+          <div class="hero-copy">
+              <div class="hero-nav">
+                <button type="button" class="back-button" id="back-button">Back</button>
+              </div>
+              <p class="eyebrow" id="hero-eyebrow">Selected Team</p>
+              <p class="hero-club" id="team-club"></p>
+              <div class="hero-title-row">
+                <h2 id="team-title">Loading...</h2>
+                <a id="team-gotsport-link" href="#" target="_blank" rel="noreferrer">Open on GotSport</a>
+              </div>
+              <p id="team-subtitle"></p>
+              <p class="hero-link-row"><button type="button" class="hero-home-link" id="team-home-link">Back to anchor home</button></p>
+            </div>
+          <div class="hero-meta" id="hero-meta" hidden></div>
+        </section>
+
+        <section class="summary-grid" id="summary-grid"></section>
+        <section class="panel" id="compare-panel" hidden>
+          <div class="compare-summary" id="compare-summary"></div>
+        </section>
+        <section class="panel" id="home-panel" hidden>
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Home</p>
+              <h3 id="home-panel-title">Anchor Schedule Snapshot</h3>
+              <p class="panel-copy" id="home-panel-copy"></p>
+            </div>
+          </div>
+          <div class="home-sections">
+            <div class="home-section">
+              <div class="home-section-heading">
+                <p class="home-section-kicker">Looking Ahead</p>
+                <h4>Upcoming Games</h4>
+                <p class="home-section-copy">Schedule pressure, opponent form, and quick matchup context for the next stretch.</p>
+              </div>
+              <div class="table-wrap">
+                <table class="home-upcoming-table">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Opponent</th>
+                      <th>Form</th>
+                      <th>Edge</th>
+                      <th>Last Matchup</th>
+                    </tr>
+                  </thead>
+                  <tbody id="home-upcoming-body"></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="home-section">
+              <div class="home-section-heading">
+                <p class="home-section-kicker">Recent Read</p>
+                <h4>Recent Games</h4>
+                <p class="home-section-copy">A clean look back at the latest results and the teams that shaped recent form.</p>
+              </div>
+              <div class="table-wrap">
+                <table class="home-recent-table">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Opponent</th>
+                      <th>Result</th>
+                    </tr>
+                  </thead>
+                  <tbody id="home-recent-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" id="matches-panel">
+          <div class="panel-header">
+          </div>
+
+          <div class="home-sections matches-sections">
+            <div class="home-section">
+              <h4 id="historical-section-title">Historical Games</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Opponent</th>
+                      <th>Result</th>
+                      <th>Details</th>
+                    </tr>
+                  </thead>
+                  <tbody id="historical-matches-body"></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="home-section">
+              <h4>Upcoming Games</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Opponent</th>
+                      <th>Result</th>
+                      <th>Details</th>
+                    </tr>
+                  </thead>
+                  <tbody id="upcoming-matches-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
