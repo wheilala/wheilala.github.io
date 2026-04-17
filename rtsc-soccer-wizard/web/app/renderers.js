@@ -258,13 +258,161 @@ function renderHomeHeroMeta(team) {
   return `<div class="hero-utility-stack">${renderHeroFormCard(team)}</div>`;
 }
 
+const CLUB_CALENDAR_WINDOW_DAYS = 30;
+const CLUB_CALENDAR_SPOTLIGHT_WINDOW_DAYS = 30;
+
+function formatDateKey(value) {
+  const year = value.getFullYear();
+  const month = `${value.getMonth() + 1}`.padStart(2, "0");
+  const day = `${value.getDate()}`.padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function getCalendarDateRange() {
+  const { startKey, endKey } = getDateRangeKeys(CLUB_CALENDAR_WINDOW_DAYS);
+  return {
+    startKey,
+    endKey,
+    label: `${formatDate(startKey)} to ${formatDate(endKey)}`,
+  };
+}
+
+function getDateRangeKeys(dayCount) {
+  const start = new Date();
+  start.setHours(0, 0, 0, 0);
+
+  const end = new Date(start);
+  end.setDate(end.getDate() + Math.max(dayCount - 1, 0));
+
+  return {
+    startKey: formatDateKey(start),
+    endKey: formatDateKey(end),
+  };
+}
+
+function getHomeVenueNickname(match) {
+  const venue = `${match?.venue_name || ""} ${match?.venue_address || ""}`.toLowerCase();
+  if (venue.includes("cherry")) {
+    return "Cherry St.";
+  }
+  if (venue.includes("sleighton")) {
+    return "Sleighton Park";
+  }
+  return match?.venue_name?.trim() || "Home field";
+}
+
+function getCalendarLocationLabel(match) {
+  if (match?.home_away === "home") {
+    return `Home | ${getHomeVenueNickname(match)}`;
+  }
+
+  if (match?.home_away === "away") {
+    return match?.venue_name?.trim() ? `Away | ${match.venue_name.trim()}` : "Away";
+  }
+
+  return match?.venue_name?.trim() || "--";
+}
+
+function getCalendarAnchorOptions() {
+  return Object.values(state.allAnchorDatasets || {})
+    .map((dataset) => ({
+      id: dataset?.anchor?.id,
+      label: dataset?.anchor?.nickname || dataset?.anchor?.display_name || "Anchor",
+    }))
+    .filter((anchor) => anchor.id)
+    .sort((a, b) => a.label.localeCompare(b.label));
+}
+
+function getActiveCalendarAnchorIds() {
+  const options = getCalendarAnchorOptions();
+  const allIds = options.map((anchor) => anchor.id);
+  const selected = (state.selectedCalendarAnchors || []).filter((anchorId) => allIds.includes(anchorId));
+  return selected.length ? selected : allIds;
+}
+
+function getFilteredCalendarDatasets() {
+  const activeIds = new Set(getActiveCalendarAnchorIds());
+  return Object.values(state.allAnchorDatasets || {}).filter((dataset) => activeIds.has(dataset?.anchor?.id));
+}
+
+function getClubCalendarMatches() {
+  const { startKey, endKey } = getCalendarDateRange();
+  const datasets = getFilteredCalendarDatasets();
+
+  return datasets
+    .map((dataset) => {
+      const anchorTeam = getAnchorTeamFromDataset(dataset);
+      const anchorLabel = dataset?.anchor?.nickname || dataset?.anchor?.display_name || "Anchor";
+      return (anchorTeam?.matches || [])
+        .filter((match) => match.match_status === "scheduled" && match.match_date >= startKey && match.match_date <= endKey)
+        .map((match) => ({
+          anchorLabel,
+          opponentLabel: match.opponent_full_name || match.opponent_team_name || match.opponent_name || "Opponent",
+          match,
+        }));
+    })
+    .flat()
+    .sort((a, b) => `${a.match.match_date}${a.match.match_time_utc || ""}`.localeCompare(`${b.match.match_date}${b.match.match_time_utc || ""}`));
+}
+
+function getNextHomeGamesByAnchor() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const todayKey = formatDateKey(today);
+
+  return getFilteredCalendarDatasets()
+    .map((dataset) => {
+      const anchorTeam = getAnchorTeamFromDataset(dataset);
+      const anchorLabel = dataset?.anchor?.nickname || dataset?.anchor?.display_name || "Anchor";
+      const homeGames = (anchorTeam?.matches || [])
+        .filter((match) => match.match_status === "scheduled" && match.home_away === "home" && match.match_date >= todayKey)
+        .sort((a, b) => `${a.match_date}${a.match_time_utc || ""}`.localeCompare(`${b.match_date}${b.match_time_utc || ""}`))
+        .slice(0, 2);
+
+      return { anchorLabel, homeGames };
+    })
+    .sort((a, b) => a.anchorLabel.localeCompare(b.anchorLabel));
+}
+
+function getCalendarSpotlightHomeGames() {
+  const { startKey, endKey } = getDateRangeKeys(CLUB_CALENDAR_SPOTLIGHT_WINDOW_DAYS);
+
+  return getFilteredCalendarDatasets()
+    .map((dataset) => {
+      const anchorTeam = getAnchorTeamFromDataset(dataset);
+      const anchorLabel = dataset?.anchor?.nickname || dataset?.anchor?.display_name || "Anchor";
+      return (anchorTeam?.matches || [])
+        .filter(
+          (match) =>
+            match.match_status === "scheduled" &&
+            match.home_away === "home" &&
+            match.match_date >= startKey &&
+            match.match_date <= endKey
+        )
+        .map((match) => ({
+          anchorLabel,
+          opponentLabel: match.opponent_full_name || match.opponent_team_name || match.opponent_name || "Opponent",
+          match,
+        }));
+    })
+    .flat()
+    .sort((a, b) => `${a.match.match_date}${a.match.match_time_utc || ""}`.localeCompare(`${b.match.match_date}${b.match.match_time_utc || ""}`));
+}
+
+function getCalendarSpotlightVenueGroups() {
+  const games = getCalendarSpotlightHomeGames();
+  return {
+    cherry: games.filter(({ match }) => getHomeVenueNickname(match) === "Cherry St."),
+    sleighton: games.filter(({ match }) => getHomeVenueNickname(match) === "Sleighton Park"),
+  };
+}
+
 function findCoachConflict(match) {
   const anchorId = state.dataset?.anchor?.id;
   const conflictAnchors = new Set([
     "rose-tree-impact-2015b",
     "rose-tree-eagles-2012b",
     "rose-tree-warriors-2014g",
-    "rose-tree-greyhounds-2014b",
   ]);
 
   if (!conflictAnchors.has(anchorId)) {
@@ -520,6 +668,8 @@ function renderHome(onNavigate) {
   const anchorParts = getTeamNameParts(impactTeam);
   const anchorName = anchorMeta?.nickname || anchorMeta?.display_name || "Anchor";
 
+  els.calendarSpotlightPanel.hidden = true;
+  els.calendarPanel.hidden = true;
   els.homePanel.hidden = false;
   els.comparePanel.hidden = true;
   els.summaryGrid.hidden = true;
@@ -755,6 +905,150 @@ function renderHome(onNavigate) {
       button.setAttribute("aria-expanded", String(!expanded));
       detailRow.hidden = expanded;
       button.closest(".home-mobile-summary-row")?.classList.toggle("is-open", !expanded);
+    });
+  });
+}
+
+function renderCalendar() {
+  const { label } = getCalendarDateRange();
+  const calendarMatches = getClubCalendarMatches();
+  const spotlightGroups = getCalendarSpotlightVenueGroups();
+  const nextHomeGamesByAnchor = getNextHomeGamesByAnchor();
+  const anchorOptions = getCalendarAnchorOptions();
+  const activeAnchorIds = getActiveCalendarAnchorIds();
+  const allSelected = anchorOptions.length > 0 && activeAnchorIds.length === anchorOptions.length;
+
+  const renderSpotlightCards = (games, emptyText) =>
+    games.length
+      ? games
+          .map(({ anchorLabel, opponentLabel, match }) => {
+            const dateTime = `${formatCompactDateWithWeekday(match.match_date)}${match.match_time_utc ? ` | ${formatMatchTime(match.match_time_utc)}` : ""}`;
+            return `
+              <article class="calendar-spotlight-card">
+                <div class="calendar-spotlight-topline">
+                  <span class="calendar-anchor-pill">${escapeHtml(anchorLabel)}</span>
+                  <span class="calendar-spotlight-badge">Home</span>
+                </div>
+                <div class="calendar-spotlight-opponent">${escapeHtml(opponentLabel)}</div>
+                <div class="calendar-spotlight-meta">${escapeHtml(dateTime)}</div>
+                <div class="calendar-spotlight-meta">${escapeHtml(getHomeVenueNickname(match))}</div>
+              </article>
+            `;
+          })
+          .join("")
+      : `<div class="calendar-home-empty">${escapeHtml(emptyText)}</div>`;
+
+  els.calendarSpotlightPanel.hidden = false;
+  els.calendarPanel.hidden = false;
+  els.homePanel.hidden = true;
+  els.comparePanel.hidden = true;
+  els.summaryGrid.hidden = true;
+  els.summaryGrid.innerHTML = "";
+  els.matchesPanel.hidden = true;
+  els.historicalMatchesBody.innerHTML = `<tr><td colspan="4" class="empty-state">Select a team on the left to browse its schedule and results.</td></tr>`;
+  els.upcomingMatchesBody.innerHTML = `<tr><td colspan="4" class="empty-state">Select a team on the left to browse its schedule and results.</td></tr>`;
+  els.hero.classList.add("hero-home");
+  els.homePanel.classList.remove("home-dashboard");
+  els.heroEyebrow.textContent = "";
+  els.teamClub.hidden = false;
+  els.teamClub.textContent = "Rose Tree Soccer Club";
+  els.teamTitle.textContent = "Club Calendar";
+  els.teamSubtitle.textContent = "A 14-day view across the tracked RTSC anchor teams.";
+  els.teamGotsportLink.hidden = true;
+  if (els.teamHomeLink) {
+    els.teamHomeLink.hidden = true;
+  }
+  els.heroMeta.hidden = true;
+  els.heroMeta.innerHTML = "";
+  els.calendarRangeLabel.textContent = `Upcoming games from ${label}.`;
+  els.calendarFilterPills.innerHTML = `
+    <button type="button" class="calendar-filter-pill ${allSelected ? "is-active" : ""}" data-calendar-filter="__all__">All Teams</button>
+    ${anchorOptions
+      .map(
+        (anchor) =>
+          `<button type="button" class="calendar-filter-pill ${activeAnchorIds.includes(anchor.id) ? "is-active" : ""}" data-calendar-filter="${escapeHtml(anchor.id)}">${escapeHtml(anchor.label)}</button>`
+      )
+      .join("")}
+  `;
+
+  els.calendarCherryGrid.innerHTML = renderSpotlightCards(
+    spotlightGroups.cherry,
+    "No Cherry St. home games are scheduled in the next 30 days."
+  );
+  els.calendarSleightonGrid.innerHTML = renderSpotlightCards(
+    spotlightGroups.sleighton,
+    "No Sleighton Park home games are scheduled in the next 30 days."
+  );
+
+  els.calendarMatchesBody.innerHTML = calendarMatches.length
+    ? calendarMatches
+        .map(({ anchorLabel, opponentLabel, match }) => {
+          const dateTime = `${formatCompactDateWithWeekday(match.match_date)}${match.match_time_utc ? ` | ${formatMatchTime(match.match_time_utc)}` : ""}`;
+          return `
+            <tr>
+              <td><span class="calendar-anchor-pill">${escapeHtml(anchorLabel)}</span></td>
+              <td>${escapeHtml(opponentLabel)}</td>
+              <td>${escapeHtml(dateTime)}</td>
+              <td>${escapeHtml(getCalendarLocationLabel(match))}</td>
+            </tr>
+          `;
+        })
+        .join("")
+    : `<tr><td colspan="4" class="empty-state">No upcoming club games found in the next 14 days.</td></tr>`;
+
+  els.calendarHomeGamesGrid.innerHTML = nextHomeGamesByAnchor
+    .map(({ anchorLabel, homeGames }) => `
+      <article class="calendar-home-card">
+        <div class="calendar-home-card-header">
+          <span class="calendar-anchor-pill">${escapeHtml(anchorLabel)}</span>
+        </div>
+        <div class="calendar-home-card-body">
+          ${
+            homeGames.length
+              ? homeGames
+                  .map((match) => {
+                    const dateTime = `${formatCompactDateWithWeekday(match.match_date)}${match.match_time_utc ? ` | ${formatMatchTime(match.match_time_utc)}` : ""}`;
+                    const opponent = match.opponent_full_name || match.opponent_team_name || match.opponent_name || "Opponent";
+                    return `
+                      <div class="calendar-home-game">
+                        <div class="calendar-home-game-title">${escapeHtml(opponent)}</div>
+                        <div class="calendar-home-game-meta">${escapeHtml(dateTime)}</div>
+                        <div class="calendar-home-game-meta">${escapeHtml(getHomeVenueNickname(match))}</div>
+                      </div>
+                    `;
+                  })
+                  .join("")
+              : `<div class="calendar-home-empty">No home games scheduled yet.</div>`
+          }
+        </div>
+      </article>
+    `)
+    .join("");
+
+  [...els.calendarSpotlightPanel.querySelectorAll("[data-calendar-filter]")].forEach((button) => {
+    button.addEventListener("click", () => {
+      const filterId = button.getAttribute("data-calendar-filter");
+      if (!filterId) return;
+
+      if (filterId === "__all__") {
+        state.selectedCalendarAnchors = [];
+        renderCalendar();
+        return;
+      }
+
+      const current = getActiveCalendarAnchorIds();
+      if (current.includes(filterId)) {
+        if (current.length === 1) {
+          return;
+        }
+        state.selectedCalendarAnchors = current.filter((anchorId) => anchorId !== filterId);
+      } else if (current.length === anchorOptions.length) {
+        state.selectedCalendarAnchors = [filterId];
+      } else {
+        state.selectedCalendarAnchors = [...current, filterId];
+      }
+
+      renderCalendar();
     });
   });
 }
@@ -1034,13 +1328,20 @@ export function renderApp({ onNavigateToTeam }) {
   els.homeNavButton.hidden = state.selectedTeamKey === "__home__";
   els.backButton.hidden = true;
 
+  if (state.selectedTeamKey === "__calendar__") {
+    renderCalendar();
+    return;
+  }
+
   if (state.selectedTeamKey === "__home__" || !team) {
     renderHome(onNavigateToTeam);
     return;
   }
 
   els.hero.classList.remove("hero-home");
+  els.calendarSpotlightPanel.hidden = true;
   els.homePanel.classList.remove("home-dashboard");
+  els.calendarPanel.hidden = true;
   const anchorNickname = getAnchorMeta()?.nickname || "Anchor";
   els.heroEyebrow.textContent = `${anchorNickname} opponent`;
   els.heroMeta.hidden = true;

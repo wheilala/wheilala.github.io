@@ -47,7 +47,11 @@ function initializeMode() {
 function syncSelectedTeamFromLocation() {
   const hashKey = window.location.hash.replace(/^#/, "");
   state.selectedTeamKey =
-    (hashKey === "__home__" ? "__home__" : state.dataset?.teams.find((team) => team.team_key === hashKey)?.team_key) ??
+    (
+      hashKey === "__home__" || hashKey === "__calendar__"
+        ? hashKey
+        : state.dataset?.teams.find((team) => team.team_key === hashKey)?.team_key
+    ) ??
     "__home__";
 }
 
@@ -67,6 +71,14 @@ function navigateHome() {
   renderApp({ onNavigateToTeam: navigateToTeam });
 }
 
+function navigateCalendar() {
+  state.selectedTeamKey = "__calendar__";
+  history.pushState(null, "", "#__calendar__");
+  closeMobileSidebar();
+  renderAnchorNav();
+  renderApp({ onNavigateToTeam: navigateToTeam });
+}
+
 function navigateToAnchor(anchorId) {
   closeMobileSidebar();
   const url = new URL(window.location.href);
@@ -81,6 +93,7 @@ function renderAnchorNav() {
   const currentAnchorId = state.dataset?.anchor?.id;
   const anchorNickname = state.dataset?.anchor?.nickname || state.dataset?.anchor?.display_name || "Anchor";
   const availableAnchors = anchorCatalog.filter((anchor) => anchor.id !== currentAnchorId);
+  const calendarLink = `<button type="button" class="anchor-nav-link ${state.selectedTeamKey === "__calendar__" ? "is-active" : ""}" data-nav-action="calendar">Club Calendar</button>`;
   const homeLink =
     state.selectedTeamKey && state.selectedTeamKey !== "__home__"
       ? `<button type="button" class="anchor-nav-link anchor-nav-home-link" data-nav-action="home"><span class="anchor-nav-home-desktop">${anchorNickname} Home</span><span class="anchor-nav-home-mobile">Back to ${anchorNickname} Home</span></button>`
@@ -88,7 +101,10 @@ function renderAnchorNav() {
 
   els.anchorNav.innerHTML = `
     <div class="anchor-nav-home-slot">
-      ${homeLink}
+      <div class="anchor-nav-primary-links">
+        ${calendarLink}
+        ${homeLink}
+      </div>
     </div>
     <div class="anchor-nav-picker">
       <span class="anchor-nav-picker-label">Switch teams</span>
@@ -144,6 +160,11 @@ function renderAnchorNav() {
     homeButton.addEventListener("click", () => navigateHome());
   }
 
+  const calendarButton = els.anchorNav.querySelector('[data-nav-action="calendar"]');
+  if (calendarButton) {
+    calendarButton.addEventListener("click", () => navigateCalendar());
+  }
+
   [...els.anchorNav.querySelectorAll(".anchor-nav-menu-item")].forEach((button) => {
     button.addEventListener("click", () => {
       if (trigger && menu) {
@@ -165,16 +186,12 @@ async function loadRelatedDatasets(anchorId) {
   state.relatedDatasets = {};
 
   const relatedAnchorMap = {
-    "rose-tree-impact-2015b": [
-      { id: "rose-tree-eagles-2012b", relationLabel: "coach" },
-      { id: "rose-tree-greyhounds-2014b", relationLabel: "player" },
-    ],
+    "rose-tree-impact-2015b": [{ id: "rose-tree-eagles-2012b", relationLabel: "coach" }],
     "rose-tree-eagles-2012b": [
       { id: "rose-tree-impact-2015b", relationLabel: "coach" },
       { id: "rose-tree-warriors-2014g", relationLabel: "coach" },
     ],
     "rose-tree-warriors-2014g": [{ id: "rose-tree-eagles-2012b", relationLabel: "coach" }],
-    "rose-tree-greyhounds-2014b": [{ id: "rose-tree-impact-2015b", relationLabel: "player" }],
   };
 
   const relatedAnchors = relatedAnchorMap[anchorId] || [];
@@ -204,6 +221,36 @@ async function loadRelatedDatasets(anchorId) {
   }
 }
 
+async function loadAllAnchorDatasets(currentAnchorId) {
+  state.allAnchorDatasets = state.dataset ? { [currentAnchorId]: state.dataset } : {};
+
+  const otherAnchors = anchorCatalog.filter((anchor) => anchor.id !== currentAnchorId);
+  if (!otherAnchors.length) {
+    return;
+  }
+
+  const responses = await Promise.all(
+    otherAnchors.map(async (anchor) => {
+      try {
+        const response = await fetch(`../data/generated/${anchor.id}.json`, { cache: "no-store" });
+        if (!response.ok) {
+          return null;
+        }
+
+        return [anchor.id, await response.json()];
+      } catch {
+        return null;
+      }
+    })
+  );
+
+  for (const item of responses) {
+    if (!item) continue;
+    const [anchorId, dataset] = item;
+    state.allAnchorDatasets[anchorId] = dataset;
+  }
+}
+
 async function loadDataset() {
   const params = new URLSearchParams(window.location.search);
   const anchorId = params.get("anchor") || "rose-tree-impact-2015b";
@@ -224,6 +271,14 @@ async function loadDataset() {
     })
     .catch(() => {
       state.relatedDatasets = {};
+    });
+
+  loadAllAnchorDatasets(anchorId)
+    .then(() => {
+      renderApp({ onNavigateToTeam: navigateToTeam });
+    })
+    .catch(() => {
+      state.allAnchorDatasets = state.dataset ? { [anchorId]: state.dataset } : {};
     });
 }
 
