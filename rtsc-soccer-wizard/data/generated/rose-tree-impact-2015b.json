@@ -1,5 +1,5 @@
 ﻿{
-    "generated_at_utc":  "2026-04-17T18:05:15Z",
+    "generated_at_utc":  "2026-04-17T18:37:21Z",
     "source":  "SQLite local archive",
     "anchor":  {
                    "id":  "rose-tree-impact-2015b",
@@ -39,15 +39,15 @@
                                    "state":  "",
                                    "website_url":  "",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  3416,
+                                                    "national_rank":  637,
+                                                    "regional_rank":  106,
+                                                    "association_rank":  32,
+                                                    "total_matches":  21,
+                                                    "total_wins":  11,
+                                                    "total_draws":  2,
+                                                    "total_losses":  8
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/286840/game-history"
                                },
@@ -1026,8 +1026,8 @@
                       "team_key":  "auto-team-392944",
                       "requested_name":  "15B Colonial Red",
                       "plain_english_name":  "15B Colonial Red",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -1048,15 +1048,15 @@
                                    "state":  "",
                                    "website_url":  "www.sjebfc.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  2312,
+                                                    "national_rank":  922,
+                                                    "regional_rank":  168,
+                                                    "association_rank":  26,
+                                                    "total_matches":  38,
+                                                    "total_wins":  13,
+                                                    "total_draws":  3,
+                                                    "total_losses":  22
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/392944/game-history"
                                },
@@ -2507,15 +2507,15 @@
                                    "state":  "",
                                    "website_url":  "www.sjebfc.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  3932,
+                                                    "national_rank":  547,
+                                                    "regional_rank":  89,
+                                                    "association_rank":  13,
+                                                    "total_matches":  26,
+                                                    "total_wins":  12,
+                                                    "total_draws":  4,
+                                                    "total_losses":  10
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/272665/game-history"
                                },
@@ -3636,15 +3636,15 @@
                                    "state":  "",
                                    "website_url":  "www.ukrainiannationals.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  1488,
+                                                    "national_rank":  1441,
+                                                    "regional_rank":  332,
+                                                    "association_rank":  73,
+                                                    "total_matches":  32,
+                                                    "total_wins":  9,
+                                                    "total_draws":  4,
+                                                    "total_losses":  19
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/266855/game-history"
                                },
@@ -4923,8 +4923,8 @@
                       "team_key":  "auto-team-619730",
                       "requested_name":  "2015 Boys Black - Yamal",
                       "plain_english_name":  "2015 Boys Black - Yamal",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -4945,15 +4945,15 @@
                                    "state":  "",
                                    "website_url":  "lehigh-valley-united-fc.sportngin.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  2785,
+                                                    "national_rank":  761,
+                                                    "regional_rank":  130,
+                                                    "association_rank":  36,
+                                                    "total_matches":  27,
+                                                    "total_wins":  11,
+                                                    "total_draws":  1,
+                                                    "total_losses":  15
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/619730/game-history"
                                },
@@ -5984,15 +5984,15 @@
                                    "state":  "",
                                    "website_url":  "http://www.radnorsoccerclub.org/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  2589,
+                                                    "national_rank":  811,
+                                                    "regional_rank":  143,
+                                                    "association_rank":  38,
+                                                    "total_matches":  28,
+                                                    "total_wins":  8,
+                                                    "total_draws":  4,
+                                                    "total_losses":  16
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/257363/game-history"
                                },
@@ -7413,15 +7413,15 @@
                                    "state":  "",
                                    "website_url":  "https://www.parush.com/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  5080,
+                                                    "national_rank":  407,
+                                                    "regional_rank":  62,
+                                                    "association_rank":  21,
+                                                    "total_matches":  32,
+                                                    "total_wins":  16,
+                                                    "total_draws":  2,
+                                                    "total_losses":  14
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/252744/game-history"
                                },
@@ -8752,15 +8752,15 @@
                                    "state":  "",
                                    "website_url":  "",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  3160,
+                                                    "national_rank":  682,
+                                                    "regional_rank":  114,
+                                                    "association_rank":  34,
+                                                    "total_matches":  32,
+                                                    "total_wins":  9,
+                                                    "total_draws":  3,
+                                                    "total_losses":  20
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/241684/game-history"
                                },
@@ -10159,8 +10159,8 @@
                       "team_key":  "auto-team-136501",
                       "requested_name":  "ASJE 2014 Boys",
                       "plain_english_name":  "ASJE 2014 Boys",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  12,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -10181,15 +10181,15 @@
                                    "state":  "",
                                    "website_url":  "https://www.asjuniorelite.com/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  70,
+                                                    "national_rank":  7936,
+                                                    "regional_rank":  2222,
+                                                    "association_rank":  455,
+                                                    "total_matches":  5,
+                                                    "total_wins":  2,
+                                                    "total_draws":  1,
+                                                    "total_losses":  2
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/136501/game-history"
                                },
@@ -10508,8 +10508,8 @@
                       "team_key":  "auto-team-318379",
                       "requested_name":  "B15",
                       "plain_english_name":  "B15",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -10530,15 +10530,15 @@
                                    "state":  "",
                                    "website_url":  "reading-rage-sc.sportngin.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  5392,
+                                                    "national_rank":  388,
+                                                    "regional_rank":  54,
+                                                    "association_rank":  19,
+                                                    "total_matches":  27,
+                                                    "total_wins":  22,
+                                                    "total_draws":  2,
+                                                    "total_losses":  3
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/318379/game-history"
                                },
@@ -11907,8 +11907,8 @@
                       "team_key":  "auto-team-38800",
                       "requested_name":  "Barca",
                       "plain_english_name":  "Barca",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -11929,15 +11929,15 @@
                                    "state":  "",
                                    "website_url":  "https://www.wjsc.org/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  441,
+                                                    "national_rank":  3924,
+                                                    "regional_rank":  1214,
+                                                    "association_rank":  171,
+                                                    "total_matches":  6,
+                                                    "total_wins":  3,
+                                                    "total_draws":  2,
+                                                    "total_losses":  1
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/38800/game-history"
                                },
@@ -12136,8 +12136,8 @@
                       "team_key":  "auto-team-500802",
                       "requested_name":  "Buckingham United 2015 Boys Fire",
                       "plain_english_name":  "Buckingham United 2015 Boys Fire",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -12158,15 +12158,15 @@
                                    "state":  "",
                                    "website_url":  "",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  10,
+                                                    "national_rank":  8431,
+                                                    "regional_rank":  2375,
+                                                    "association_rank":  302,
+                                                    "total_matches":  7,
                                                     "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "total_draws":  1,
+                                                    "total_losses":  6
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/500802/game-history"
                                },
@@ -12455,8 +12455,8 @@
                       "team_key":  "auto-team-342841",
                       "requested_name":  "Celtic SC 15",
                       "plain_english_name":  "Celtic SC 15",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -12477,15 +12477,15 @@
                                    "state":  "",
                                    "website_url":  "celtic-sc.sportngin.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  1638,
+                                                    "national_rank":  1311,
+                                                    "regional_rank":  294,
+                                                    "association_rank":  5,
+                                                    "total_matches":  20,
+                                                    "total_wins":  10,
+                                                    "total_draws":  2,
+                                                    "total_losses":  8
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/342841/game-history"
                                },
@@ -13104,8 +13104,8 @@
                       "team_key":  "auto-team-268802",
                       "requested_name":  "Coppermine SC 2015 Boys Pre-Academy I West",
                       "plain_english_name":  "Coppermine SC 2015 Boys Pre-Academy I West",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -13126,15 +13126,15 @@
                                    "state":  "",
                                    "website_url":  "www.copperminesoccer.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  6727,
+                                                    "national_rank":  300,
+                                                    "regional_rank":  40,
+                                                    "association_rank":  8,
+                                                    "total_matches":  40,
+                                                    "total_wins":  25,
+                                                    "total_draws":  5,
+                                                    "total_losses":  10
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/268802/game-history"
                                },
@@ -14923,8 +14923,8 @@
                       "team_key":  "auto-team-488764",
                       "requested_name":  "Fever SC 15B Pre-Academy",
                       "plain_english_name":  "Fever SC 15B Pre-Academy",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -14945,15 +14945,15 @@
                                    "state":  "",
                                    "website_url":  "https://feversc.com/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  1135,
+                                                    "national_rank":  1874,
+                                                    "regional_rank":  469,
+                                                    "association_rank":  95,
+                                                    "total_matches":  28,
+                                                    "total_wins":  11,
+                                                    "total_draws":  2,
+                                                    "total_losses":  15
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/488764/game-history"
                                },
@@ -16044,15 +16044,15 @@
                                    "state":  "",
                                    "website_url":  "wwww.hvaasoccer.net",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  4590,
+                                                    "national_rank":  453,
+                                                    "regional_rank":  73,
+                                                    "association_rank":  25,
+                                                    "total_matches":  28,
+                                                    "total_wins":  14,
+                                                    "total_draws":  2,
+                                                    "total_losses":  12
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/254059/game-history"
                                },
@@ -17203,15 +17203,15 @@
                                    "state":  "",
                                    "website_url":  "Hulmevillesoccer.org",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  2409,
+                                                    "national_rank":  878,
+                                                    "regional_rank":  157,
+                                                    "association_rank":  42,
+                                                    "total_matches":  43,
+                                                    "total_wins":  19,
+                                                    "total_draws":  4,
+                                                    "total_losses":  20
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/372333/game-history"
                                },
@@ -19082,15 +19082,15 @@
                                    "state":  "",
                                    "website_url":  "http://www.lmsc.net/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  1521,
+                                                    "national_rank":  1401,
+                                                    "regional_rank":  324,
+                                                    "association_rank":  68,
+                                                    "total_matches":  28,
+                                                    "total_wins":  12,
+                                                    "total_draws":  3,
+                                                    "total_losses":  13
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/291724/game-history"
                                },
@@ -20639,8 +20639,8 @@
                       "team_key":  "auto-team-622177",
                       "requested_name":  "Nether United FC 15 Boys Regional",
                       "plain_english_name":  "Nether United FC 15 Boys Regional",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -20661,15 +20661,15 @@
                                    "state":  "",
                                    "website_url":  "http://www.npaasoccer.com/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  342,
+                                                    "national_rank":  4599,
+                                                    "regional_rank":  1430,
+                                                    "association_rank":  203,
+                                                    "total_matches":  14,
+                                                    "total_wins":  1,
+                                                    "total_draws":  2,
+                                                    "total_losses":  11
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/622177/game-history"
                                },
@@ -21408,8 +21408,8 @@
                       "team_key":  "auto-team-380818",
                       "requested_name":  "Old Line FC Boys 15/16 Black",
                       "plain_english_name":  "Old Line FC Boys 15/16 Black",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -21430,15 +21430,15 @@
                                    "state":  "",
                                    "website_url":  "www.oldlinefc.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  4880,
+                                                    "national_rank":  424,
+                                                    "regional_rank":  64,
+                                                    "association_rank":  15,
+                                                    "total_matches":  39,
+                                                    "total_wins":  23,
+                                                    "total_draws":  4,
+                                                    "total_losses":  12
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/380818/game-history"
                                },
@@ -24326,8 +24326,8 @@
                       "team_key":  "auto-team-341658",
                       "requested_name":  "SUSQUEHANNA CPU LIONS Elite",
                       "plain_english_name":  "SUSQUEHANNA CPU LIONS Elite",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -24348,15 +24348,15 @@
                                    "state":  "",
                                    "website_url":  "https://www.susquehannasoccerclub.org/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  469,
+                                                    "national_rank":  3767,
+                                                    "regional_rank":  1159,
+                                                    "association_rank":  168,
+                                                    "total_matches":  8,
+                                                    "total_wins":  5,
                                                     "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "total_losses":  3
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/341658/game-history"
                                },
@@ -24735,8 +24735,8 @@
                       "team_key":  "auto-team-423846",
                       "requested_name":  "SWAG Academy 2016",
                       "plain_english_name":  "SWAG Academy 2016",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  10,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -24757,15 +24757,15 @@
                                    "state":  "",
                                    "website_url":  "philadelphia-union-academy.sportngin.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  13835,
+                                                    "national_rank":  28,
+                                                    "regional_rank":  3,
+                                                    "association_rank":  1,
+                                                    "total_matches":  52,
+                                                    "total_wins":  35,
+                                                    "total_draws":  7,
+                                                    "total_losses":  10
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/423846/game-history"
                                },
@@ -27364,8 +27364,8 @@
                       "team_key":  "auto-team-295927",
                       "requested_name":  "Sporting Athletic Club 2015B Red I",
                       "plain_english_name":  "Sporting Athletic Club 2015B Red I",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -27386,15 +27386,15 @@
                                    "state":  "",
                                    "website_url":  "sportingac.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  3633,
+                                                    "national_rank":  601,
+                                                    "regional_rank":  97,
+                                                    "association_rank":  2,
+                                                    "total_matches":  26,
+                                                    "total_wins":  12,
+                                                    "total_draws":  3,
+                                                    "total_losses":  11
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/295927/game-history"
                                },
@@ -28553,8 +28553,8 @@
                       "team_key":  "auto-team-616996",
                       "requested_name":  "Sporting Athletic Club 2015B Red II",
                       "plain_english_name":  "Sporting Athletic Club 2015B Red II",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -28575,15 +28575,15 @@
                                    "state":  "",
                                    "website_url":  "sportingac.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  1200,
+                                                    "national_rank":  1768,
+                                                    "regional_rank":  437,
+                                                    "association_rank":  7,
+                                                    "total_matches":  18,
+                                                    "total_wins":  7,
+                                                    "total_draws":  3,
+                                                    "total_losses":  8
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/616996/game-history"
                                },
@@ -29382,8 +29382,8 @@
                       "team_key":  "auto-team-268235",
                       "requested_name":  "U11 Boys 2015 Black",
                       "plain_english_name":  "U11 Boys 2015 Black",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -29404,15 +29404,15 @@
                                    "state":  "",
                                    "website_url":  "https://www.phoenixvillesoccer.org/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  3553,
+                                                    "national_rank":  610,
+                                                    "regional_rank":  100,
+                                                    "association_rank":  29,
+                                                    "total_matches":  28,
+                                                    "total_wins":  14,
+                                                    "total_draws":  3,
+                                                    "total_losses":  11
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/268235/game-history"
                                },
@@ -30721,8 +30721,8 @@
                       "team_key":  "auto-team-499247",
                       "requested_name":  "VE 2015 White",
                       "plain_english_name":  "VE 2015 White",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -30743,15 +30743,15 @@
                                    "state":  "",
                                    "website_url":  "http://vesoccer.org",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  2200,
+                                                    "national_rank":  968,
+                                                    "regional_rank":  186,
+                                                    "association_rank":  46,
+                                                    "total_matches":  13,
+                                                    "total_wins":  8,
+                                                    "total_draws":  1,
+                                                    "total_losses":  4
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/499247/game-history"
                                },
@@ -31212,15 +31212,15 @@
                                    "state":  "",
                                    "website_url":  "http://www.playwra.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  7026,
+                                                    "national_rank":  279,
+                                                    "regional_rank":  33,
+                                                    "association_rank":  12,
+                                                    "total_matches":  34,
+                                                    "total_wins":  23,
+                                                    "total_draws":  3,
+                                                    "total_losses":  8
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/364777/game-history"
                                },
@@ -32469,8 +32469,8 @@
                       "team_key":  "auto-team-592267",
                       "requested_name":  "Young Guns",
                       "plain_english_name":  "Young Guns",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  11,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -32491,15 +32491,15 @@
                                    "state":  "",
                                    "website_url":  "quaker-elite-soccer-club.sportngin.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  872,
+                                                    "national_rank":  2313,
+                                                    "regional_rank":  636,
+                                                    "association_rank":  122,
+                                                    "total_matches":  3,
+                                                    "total_wins":  2,
                                                     "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "total_losses":  1
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/592267/game-history"
                                },

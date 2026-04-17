@@ -1,5 +1,5 @@
 ﻿{
-    "generated_at_utc":  "2026-04-17T18:03:50Z",
+    "generated_at_utc":  "2026-04-17T18:33:00Z",
     "source":  "SQLite local archive",
     "anchor":  {
                    "id":  "rose-tree-greyhounds-2014b",
@@ -39,15 +39,15 @@
                                    "state":  "",
                                    "website_url":  "",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  576,
+                                                    "national_rank":  3846,
+                                                    "regional_rank":  1171,
+                                                    "association_rank":  159,
+                                                    "total_matches":  13,
+                                                    "total_wins":  8,
                                                     "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "total_losses":  5
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/286864/game-history"
                                },
@@ -816,8 +816,8 @@
                       "team_key":  "auto-team-248513",
                       "requested_name":  "2013 B Gold",
                       "plain_english_name":  "2013 B Gold",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -838,15 +838,15 @@
                                    "state":  "",
                                    "website_url":  "http://fcmontco.org/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  806,
+                                                    "national_rank":  2554,
+                                                    "regional_rank":  752,
+                                                    "association_rank":  117,
+                                                    "total_matches":  18,
+                                                    "total_wins":  9,
                                                     "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "total_losses":  9
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/248513/game-history"
                                },
@@ -2065,8 +2065,8 @@
                       "team_key":  "auto-team-18524",
                       "requested_name":  "2013 Boys Premier",
                       "plain_english_name":  "2013 Boys Premier",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -2087,15 +2087,15 @@
                                    "state":  "",
                                    "website_url":  "http://www.radnorsoccerclub.org/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  380,
+                                                    "national_rank":  4368,
+                                                    "regional_rank":  1313,
+                                                    "association_rank":  171,
+                                                    "total_matches":  17,
+                                                    "total_wins":  5,
+                                                    "total_draws":  1,
+                                                    "total_losses":  11
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/18524/game-history"
                                },
@@ -3014,8 +3014,8 @@
                       "team_key":  "auto-team-504100",
                       "requested_name":  "2013 Boys South Blue",
                       "plain_english_name":  "2013 Boys South Blue",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -3036,15 +3036,15 @@
                                    "state":  "",
                                    "website_url":  "",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  1455,
+                                                    "national_rank":  1475,
+                                                    "regional_rank":  431,
+                                                    "association_rank":  5,
+                                                    "total_matches":  27,
+                                                    "total_wins":  9,
+                                                    "total_draws":  1,
+                                                    "total_losses":  17
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/504100/game-history"
                                },
@@ -4263,8 +4263,8 @@
                       "team_key":  "auto-team-112716",
                       "requested_name":  "2013 Hawks",
                       "plain_english_name":  "2013 Hawks",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -4285,15 +4285,15 @@
                                    "state":  "",
                                    "website_url":  "www.haverfordsoccer.org",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  471,
+                                                    "national_rank":  3871,
+                                                    "regional_rank":  1170,
+                                                    "association_rank":  157,
+                                                    "total_matches":  19,
+                                                    "total_wins":  7,
+                                                    "total_draws":  2,
+                                                    "total_losses":  10
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/112716/game-history"
                                },
@@ -5182,8 +5182,8 @@
                       "team_key":  "auto-team-335957",
                       "requested_name":  "2014 Boys North Blue",
                       "plain_english_name":  "2014 Boys North Blue",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  12,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -5204,15 +5204,15 @@
                                    "state":  "",
                                    "website_url":  "",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  620,
+                                                    "national_rank":  3659,
+                                                    "regional_rank":  1115,
+                                                    "association_rank":  13,
+                                                    "total_matches":  17,
+                                                    "total_wins":  5,
+                                                    "total_draws":  5,
+                                                    "total_losses":  7
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/335957/game-history"
                                },
@@ -6311,8 +6311,8 @@
                       "team_key":  "auto-team-508233",
                       "requested_name":  "B13 Blue",
                       "plain_english_name":  "B13 Blue",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -6333,15 +6333,15 @@
                                    "state":  "",
                                    "website_url":  "reading-rage-sc.sportngin.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  523,
+                                                    "national_rank":  3578,
+                                                    "regional_rank":  1075,
+                                                    "association_rank":  150,
+                                                    "total_matches":  31,
+                                                    "total_wins":  8,
+                                                    "total_draws":  3,
+                                                    "total_losses":  20
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/508233/game-history"
                                },
@@ -7980,8 +7980,8 @@
                       "team_key":  "auto-team-96569",
                       "requested_name":  "Boys 14s Elite",
                       "plain_english_name":  "Boys 14s Elite",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  12,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -8002,15 +8002,15 @@
                                    "state":  "",
                                    "website_url":  "https://www.brandywineyouthclub.com/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  847,
+                                                    "national_rank":  2864,
+                                                    "regional_rank":  838,
+                                                    "association_rank":  119,
+                                                    "total_matches":  12,
+                                                    "total_wins":  7,
+                                                    "total_draws":  1,
+                                                    "total_losses":  4
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/96569/game-history"
                                },
@@ -9019,8 +9019,8 @@
                       "team_key":  "auto-team-110237",
                       "requested_name":  "Celtic 2013",
                       "plain_english_name":  "Celtic 2013",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -9041,15 +9041,15 @@
                                    "state":  "",
                                    "website_url":  "www.springfieldfcinc.org",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  462,
+                                                    "national_rank":  3926,
+                                                    "regional_rank":  1183,
+                                                    "association_rank":  158,
+                                                    "total_matches":  20,
+                                                    "total_wins":  3,
+                                                    "total_draws":  1,
+                                                    "total_losses":  16
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/110237/game-history"
                                },
@@ -9998,8 +9998,8 @@
                       "team_key":  "auto-team-108513",
                       "requested_name":  "FCE 2013 Boys Premier",
                       "plain_english_name":  "FCE 2013 Boys Premier",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -10020,15 +10020,15 @@
                                    "state":  "",
                                    "website_url":  "www.fceuropa.org",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  1143,
+                                                    "national_rank":  1863,
+                                                    "regional_rank":  531,
+                                                    "association_rank":  92,
+                                                    "total_matches":  33,
+                                                    "total_wins":  12,
+                                                    "total_draws":  5,
+                                                    "total_losses":  16
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/108513/game-history"
                                },
@@ -11517,8 +11517,8 @@
                       "team_key":  "auto-team-379977",
                       "requested_name":  "Lionville Boys ‘13 - White",
                       "plain_english_name":  "Lionville Boys ‘13 - White",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -11539,15 +11539,15 @@
                                    "state":  "",
                                    "website_url":  "lionville-soccer-club.sportngin.com",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  824,
+                                                    "national_rank":  2504,
+                                                    "regional_rank":  729,
+                                                    "association_rank":  115,
+                                                    "total_matches":  16,
+                                                    "total_wins":  10,
+                                                    "total_draws":  2,
+                                                    "total_losses":  4
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/379977/game-history"
                                },
@@ -12676,8 +12676,8 @@
                       "team_key":  "auto-team-503859",
                       "requested_name":  "Rebels",
                       "plain_english_name":  "Rebels",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -12698,15 +12698,15 @@
                                    "state":  "",
                                    "website_url":  "http://www.ridleyunitedsoccer.org/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
+                                                    "ranking_date":  "2026-04-17",
                                                     "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
+                                                    "national_rank":  8161,
+                                                    "regional_rank":  2205,
+                                                    "association_rank":  274,
+                                                    "total_matches":  11,
                                                     "total_wins":  null,
                                                     "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "total_losses":  11
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/503859/game-history"
                                },
@@ -13235,8 +13235,8 @@
                       "team_key":  "auto-team-107062",
                       "requested_name":  "Rose Tree Falcons/Dynamite",
                       "plain_english_name":  "Rose Tree Falcons/Dynamite",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -13257,15 +13257,15 @@
                                    "state":  "",
                                    "website_url":  "",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  1189,
+                                                    "national_rank":  1795,
+                                                    "regional_rank":  517,
+                                                    "association_rank":  91,
+                                                    "total_matches":  13,
+                                                    "total_wins":  3,
+                                                    "total_draws":  4,
+                                                    "total_losses":  6
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/107062/game-history"
                                },
@@ -14034,8 +14034,8 @@
                       "team_key":  "auto-team-395601",
                       "requested_name":  "SSC 2013 Boys",
                       "plain_english_name":  "SSC 2013 Boys",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -14056,15 +14056,15 @@
                                    "state":  "",
                                    "website_url":  "http://www.swarthmorerecreation.org/index.php/soccer/travel-soccer-2/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  170,
+                                                    "national_rank":  5997,
+                                                    "regional_rank":  1730,
+                                                    "association_rank":  220,
+                                                    "total_matches":  13,
+                                                    "total_wins":  4,
                                                     "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "total_losses":  9
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/395601/game-history"
                                },
@@ -14923,8 +14923,8 @@
                       "team_key":  "auto-team-266989",
                       "requested_name":  "Santos 2013",
                       "plain_english_name":  "Santos 2013",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -14945,15 +14945,15 @@
                                    "state":  "",
                                    "website_url":  "https://www.mainlinesoccer.com/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  322,
+                                                    "national_rank":  4749,
+                                                    "regional_rank":  1415,
+                                                    "association_rank":  182,
+                                                    "total_matches":  13,
+                                                    "total_wins":  6,
+                                                    "total_draws":  2,
+                                                    "total_losses":  5
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/266989/game-history"
                                },
@@ -15722,8 +15722,8 @@
                       "team_key":  "auto-team-270605",
                       "requested_name":  "Shamrocks 2013",
                       "plain_english_name":  "Shamrocks 2013",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -15744,15 +15744,15 @@
                                    "state":  "",
                                    "website_url":  "www.springfieldfcinc.org",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  319,
+                                                    "national_rank":  4773,
+                                                    "regional_rank":  1418,
+                                                    "association_rank":  183,
+                                                    "total_matches":  10,
+                                                    "total_wins":  5,
+                                                    "total_draws":  1,
+                                                    "total_losses":  4
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/270605/game-history"
                                },
@@ -16281,8 +16281,8 @@
                       "team_key":  "auto-team-505022",
                       "requested_name":  "U13 Boys 2013 White",
                       "plain_english_name":  "U13 Boys 2013 White",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -16303,15 +16303,15 @@
                                    "state":  "",
                                    "website_url":  "https://www.phoenixvillesoccer.org/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  278,
+                                                    "national_rank":  5037,
+                                                    "regional_rank":  1480,
+                                                    "association_rank":  193,
+                                                    "total_matches":  19,
+                                                    "total_wins":  3,
+                                                    "total_draws":  1,
+                                                    "total_losses":  15
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/505022/game-history"
                                },
@@ -17320,8 +17320,8 @@
                       "team_key":  "auto-team-188179",
                       "requested_name":  "United 2013",
                       "plain_english_name":  "United 2013",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -17342,15 +17342,15 @@
                                    "state":  "",
                                    "website_url":  "http://www.pennfusion.org/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  218,
+                                                    "national_rank":  5525,
+                                                    "regional_rank":  1614,
+                                                    "association_rank":  207,
+                                                    "total_matches":  16,
+                                                    "total_wins":  1,
+                                                    "total_draws":  2,
+                                                    "total_losses":  13
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/188179/game-history"
                                },
@@ -18629,8 +18629,8 @@
                       "team_key":  "auto-team-55484",
                       "requested_name":  "White Dtown \u002713 (B)",
                       "plain_english_name":  "White Dtown \u002713 (B)",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  13,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -18651,15 +18651,15 @@
                                    "state":  "",
                                    "website_url":  "http://fcdelco.org/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
-                                                    "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  1258,
+                                                    "national_rank":  1700,
+                                                    "regional_rank":  485,
+                                                    "association_rank":  84,
+                                                    "total_matches":  30,
+                                                    "total_wins":  14,
+                                                    "total_draws":  3,
+                                                    "total_losses":  13
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/55484/game-history"
                                },
@@ -20448,8 +20448,8 @@
                       "team_key":  "auto-team-241254",
                       "requested_name":  "Wolverines 2014 B (A)",
                       "plain_english_name":  "Wolverines 2014 B (A)",
-                      "age":  0,
-                      "gender":  "",
+                      "age":  12,
+                      "gender":  "m",
                       "search_queries":  [
 
                                          ],
@@ -20470,15 +20470,15 @@
                                    "state":  "",
                                    "website_url":  "http://gcvsa.org/",
                                    "rankings":  {
-                                                    "ranking_date":  "",
-                                                    "total_points":  null,
-                                                    "national_rank":  null,
-                                                    "regional_rank":  null,
-                                                    "association_rank":  null,
-                                                    "total_matches":  null,
-                                                    "total_wins":  null,
+                                                    "ranking_date":  "2026-04-17",
+                                                    "total_points":  620,
+                                                    "national_rank":  3659,
+                                                    "regional_rank":  1115,
+                                                    "association_rank":  151,
+                                                    "total_matches":  10,
+                                                    "total_wins":  7,
                                                     "total_draws":  null,
-                                                    "total_losses":  null
+                                                    "total_losses":  3
                                                 },
                                    "rankings_url":  "https://rankings.gotsport.com/teams/241254/game-history"
                                },
