@@ -1,0 +1,18 @@
+{
+  "name": "Game Tracker",
+  "short_name": "Game Tracker",
+  "description": "Fast soccer game observation and tally tracker.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#f5f7f3",
+  "theme_color": "#265b44",
+  "icons": [
+    {
+      "src": "soccer-fav.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

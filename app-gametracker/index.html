@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#265b44">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Game Tracker">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Game Tracker</title>
+    <link rel="icon" href="soccer-fav.png" type="image/png">
+    <link rel="apple-touch-icon" href="soccer-fav.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="top-bar">
+        <div>
+          <p class="eyebrow">RTSC observation tracker</p>
+          <h1>Game Tracker</h1>
+        </div>
+        <div class="header-actions">
+          <button class="quiet-button hidden" id="installButton" type="button">Install</button>
+          <button class="quiet-button" id="newGameButton" type="button">New Game</button>
+          <button class="quiet-button" id="rosterButton" type="button">Roster</button>
+          <button class="quiet-button" id="subsButton" type="button">Subs</button>
+          <button class="quiet-button" id="goalButton" type="button">Goal</button>
+          <button class="icon-button" id="tallyButton" type="button" aria-label="Open tally">
+            <span aria-hidden="true">#</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="game-clock" aria-label="Game clock">
+        <div>
+          <p class="eyebrow" id="clockStatus">Not started</p>
+          <div class="clock-readout" id="clockReadout">00:00</div>
+          <div class="halftime-readout hidden" id="halftimeReadout">Halftime 00:00</div>
+        </div>
+        <div class="clock-actions">
+          <button class="primary-action" id="clockToggle" type="button">Start</button>
+          <button class="tiny-clock-action hidden" id="pauseClockButton" type="button">Pause</button>
+          <button class="secondary-action hidden" id="halftimeButton" type="button">Halftime</button>
+          <button class="secondary-action hidden" id="finalWhistleButton" type="button">Final Whistle</button>
+          <button class="reset-link" id="resetClock" type="button">Reset</button>
+        </div>
+      </section>
+
+      <section class="undo-strip hidden" id="undoStrip" aria-live="polite">
+        <div>
+          <p class="eyebrow">Last observation</p>
+          <div class="undo-context" id="undoContext"></div>
+        </div>
+        <button class="undo-action" id="undoLast" type="button" aria-label="Undo last observation">
+          <span aria-hidden="true">&#8630;</span>
+          <span>Undo</span>
+        </button>
+      </section>
+
+      <section class="sub-strip hidden" id="subStrip" aria-live="polite">
+        <div>
+          <p class="eyebrow">Staged subs</p>
+          <div class="undo-context" id="subContext"></div>
+        </div>
+        <button class="sub-commit-action" id="subsMadeButton" type="button">Subs made</button>
+      </section>
+
+      <section class="entry-panel" aria-live="polite">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" id="modeEyebrow">Select player</p>
+            <h2 id="panelTitle">Who did you notice?</h2>
+          </div>
+          <button class="text-button hidden" id="cancelObservation" type="button">Roster</button>
+        </div>
+
+        <div class="player-grid" id="playerGrid" aria-label="Roster"></div>
+
+        <div class="observation-panel hidden" id="observationPanel">
+          <div class="selected-player" id="selectedPlayerName"></div>
+          <div class="observation-groups" id="observationGroups"></div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="roster-sheet hidden" id="rosterSheet" aria-hidden="true">
+      <div class="roster-card" role="dialog" aria-modal="true" aria-labelledby="rosterTitle">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Game setup</p>
+            <h2 id="rosterTitle">Roster</h2>
+          </div>
+          <button class="icon-button" id="closeRoster" type="button" aria-label="Close roster">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="summary-strip" id="rosterSummary"></div>
+        <form class="roster-edit-form" id="addPlayerForm">
+          <input id="newPlayerName" type="text" autocomplete="off" placeholder="Add player name" aria-label="Add player name">
+          <button class="secondary-action" type="submit">Add</button>
+        </form>
+        <div class="roster-list" id="rosterList"></div>
+      </div>
+    </aside>
+
+    <aside class="sub-sheet hidden" id="subSheet" aria-hidden="true">
+      <div class="sub-card" role="dialog" aria-modal="true" aria-labelledby="subTitle">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" id="subStepLabel">Prep subs</p>
+            <h2 id="subTitle">Who is coming off?</h2>
+          </div>
+          <button class="icon-button" id="closeSubs" type="button" aria-label="Close substitutions">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="goal-context" id="subContextSheet"></div>
+        <div class="sub-staged-list" id="subStagedList"></div>
+        <div class="goal-options" id="subOptions"></div>
+        <button class="primary-action hidden" id="commitSubsSheet" type="button">Subs made</button>
+      </div>
+    </aside>
+
+    <aside class="goal-sheet hidden" id="goalSheet" aria-hidden="true">
+      <div class="goal-card" role="dialog" aria-modal="true" aria-labelledby="goalTitle">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" id="goalStepLabel">Goal</p>
+            <h2 id="goalTitle">Who scored?</h2>
+          </div>
+          <button class="icon-button" id="closeGoal" type="button" aria-label="Close goal entry">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="goal-context" id="goalContext"></div>
+        <div class="goal-options" id="goalOptions"></div>
+        <button class="primary-action hidden" id="finishGoal" type="button">Save goal</button>
+      </div>
+    </aside>
+
+    <aside class="tally-sheet hidden" id="tallySheet" aria-hidden="true">
+      <div class="tally-card" role="dialog" aria-modal="true" aria-labelledby="tallyTitle">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Current game</p>
+            <h2 id="tallyTitle">Observation Tally</h2>
+          </div>
+          <button class="icon-button" id="closeTally" type="button" aria-label="Close tally">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="summary-strip" id="summaryStrip"></div>
+        <div class="tally-list" id="tallyList"></div>
+        <button class="secondary-action wide-action" id="copyGameLog" type="button">Copy Game Log to Clipboard</button>
+        <button class="danger-action" id="clearGame" type="button">Clear game data</button>
+      </div>
+    </aside>
+
+    <aside class="setup-sheet hidden" id="setupSheet" aria-hidden="true">
+      <div class="setup-card" role="dialog" aria-modal="true" aria-labelledby="setupTitle">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" id="setupStepLabel">New game</p>
+            <h2 id="setupTitle">Set up roster</h2>
+          </div>
+          <button class="icon-button" id="closeSetup" type="button" aria-label="Close new game setup">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="setup-progress" id="setupProgress"></div>
+        <p class="reset-copy" id="setupCopy"></p>
+        <div class="setup-body" id="setupBody"></div>
+        <div class="setup-actions">
+          <button class="text-button hidden" id="setupBack" type="button">Back</button>
+          <button class="secondary-action" id="setupNext" type="button">Next</button>
+          <button class="primary-action hidden" id="setupStart" type="button">Ready to start</button>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="reset-sheet hidden" id="resetSheet" aria-hidden="true">
+      <div class="reset-card" role="dialog" aria-modal="true" aria-labelledby="resetTitle">
+        <div>
+          <p class="eyebrow">Confirm reset</p>
+          <h2 id="resetTitle">Reset game clock?</h2>
+        </div>
+        <p class="reset-copy">Choose whether to keep or clear the observation, goal, and substitution log.</p>
+        <div class="reset-actions">
+          <button class="danger-action" id="resetClearLog" type="button">Reset and clear log</button>
+          <button class="secondary-action" id="resetKeepLog" type="button">Reset and KEEP log</button>
+          <button class="text-button" id="cancelReset" type="button">Cancel</button>
+        </div>
+      </div>
+    </aside>
+
+    <script src="app.js"></script>
+  </body>
+</html>
