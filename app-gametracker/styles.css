@@ -442,7 +442,7 @@ h2 {
   display: grid;
   place-items: end center;
   background: rgba(18, 27, 24, 0.44);
-  padding: 18px 12px max(12px, env(safe-area-inset-bottom));
+  padding: 12px 10px max(10px, env(safe-area-inset-bottom));
 }
 
 .goal-card,
@@ -453,7 +453,8 @@ h2 {
 .tally-card {
   display: flex;
   width: min(100%, 740px);
-  max-height: min(88vh, 820px);
+  max-height: min(92vh, 820px);
+  max-height: min(92dvh, 820px);
   flex-direction: column;
   gap: 14px;
   overflow: hidden;
@@ -470,7 +471,8 @@ h2 {
 .roster-card,
 .setup-card,
 .sub-card {
-  min-height: min(72vh, 650px);
+  min-height: min(78vh, 650px);
+  min-height: min(78dvh, 650px);
 }
 
 .setup-progress,
@@ -697,21 +699,25 @@ h2 {
 }
 
 .goal-card {
-  min-height: min(72vh, 650px);
+  min-height: min(84vh, 650px);
+  min-height: min(84dvh, 650px);
+  gap: 10px;
 }
 
 .goal-context {
-  min-height: 25px;
+  min-height: 18px;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.84rem;
   font-weight: 850;
+  line-height: 1.25;
 }
 
 .goal-options {
   display: grid;
   flex: 1;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: start;
+  gap: 7px;
   min-height: 0;
   overflow: auto;
 }
@@ -721,16 +727,17 @@ h2 {
 }
 
 .goal-option {
-  min-height: clamp(58px, 11vh, 84px);
+  min-height: 48px;
   border: 1px solid #c9d7cf;
   border-radius: 8px;
   background: linear-gradient(180deg, #fff, #f8fbf9);
-  padding: 11px;
+  padding: 8px;
   color: var(--ink);
   text-align: left;
-  font-size: clamp(0.96rem, 4.3vw, 1.16rem);
+  font-size: clamp(0.86rem, 3.7vw, 1.05rem);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
 }
 
 .goal-option.selected {
@@ -871,11 +878,39 @@ button:focus-visible {
   .goal-options {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .goal-option {
+    min-height: clamp(58px, 9vh, 84px);
+    padding: 11px;
+    font-size: clamp(0.96rem, 2.1vw, 1.16rem);
+  }
 }
 
 @media (max-width: 390px) {
   .primary-action,
   .secondary-action {
     flex: 1;
+  }
+
+  .goal-sheet,
+  .sub-sheet {
+    padding: 8px 6px max(8px, env(safe-area-inset-bottom));
+  }
+
+  .goal-card,
+  .sub-card {
+    min-height: min(90vh, 680px);
+    min-height: min(90dvh, 680px);
+    padding: 10px;
+  }
+
+  .goal-options {
+    gap: 6px;
+  }
+
+  .goal-option {
+    min-height: 44px;
+    padding: 7px;
+    font-size: 0.84rem;
   }
 }
