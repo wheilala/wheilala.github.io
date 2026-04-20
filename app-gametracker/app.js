@@ -1,18 +1,18 @@
 const defaultRoster = [
-  { id: "alex", name: "Alex" },
-  { id: "ben", name: "Ben" },
-  { id: "caleb", name: "Caleb" },
-  { id: "diego", name: "Diego" },
-  { id: "eli", name: "Eli" },
-  { id: "finn", name: "Finn" },
-  { id: "gabe", name: "Gabe" },
-  { id: "henry", name: "Henry" },
-  { id: "isaac", name: "Isaac" },
-  { id: "jonah", name: "Jonah" },
-  { id: "leo", name: "Leo" },
-  { id: "mason", name: "Mason" },
-  { id: "noah", name: "Noah" },
-  { id: "owen", name: "Owen" }
+  { id: "boden", name: "Boden" },
+  { id: "brady", name: "Brady" },
+  { id: "indy", name: "Indy" },
+  { id: "jack", name: "Jack" },
+  { id: "james", name: "James" },
+  { id: "luca", name: "Luca" },
+  { id: "mathias", name: "Mathias" },
+  { id: "nicholas", name: "Nicholas" },
+  { id: "ryan-p", name: "Ryan P" },
+  { id: "ryan-m", name: "Ryan M" },
+  { id: "tommy", name: "Tommy" },
+  { id: "vaughn", name: "Vaughn" },
+  { id: "wes-h", name: "Wes H" },
+  { id: "weston", name: "Weston" }
 ];
 
 let roster = [...defaultRoster];
