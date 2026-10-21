@@ -3642,3 +3642,10 @@ tbody td {
     font-size: 0.78rem;
   }
 }
+/* Unknown results remain distinct from draws and never imply a final score. */
+.compare-result-pending {
+  background: #fff1c2;
+  color: #744b00;
+  border: 1px solid #d1a34b;
+}
+.pending-score-source { display: block; font-size: 0.72rem; margin-top: 4px; color: var(--muted); }

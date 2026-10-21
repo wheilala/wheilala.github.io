@@ -1,4 +1,5 @@
 import { state, els } from "./state.js";
+import { getRecentGames, getRecentResult } from "./match-status.js";
 import {
   escapeHtml,
   formatCompactDate,
@@ -718,12 +719,14 @@ function renderHome(onNavigate) {
         .slice(0, 8)
     : [];
 
-  const recent = impactTeam
-    ? impactTeam.matches
-        .filter((match) => match.completed)
-        .sort((a, b) => `${b.match_date}${b.match_time_utc}`.localeCompare(`${a.match_date}${a.match_time_utc}`))
-        .slice(0, 8)
-    : [];
+  const recent = getRecentGames(impactTeam?.matches || []);
+  const unresolved = recent.filter(match => !match.completed);
+  const recentTable = els.homeRecentBody.closest("table");
+  if (unresolved.length) {
+    const caption = recentTable.caption || recentTable.createCaption();
+    caption.textContent = `${unresolved.length} past game record${unresolved.length === 1 ? " has" : "s have"} no recorded score. ? = confirm whether played or needs a makeup. All unresolved records are included, even older archive entries.`;
+    caption.style.cssText = "caption-side:top;text-align:left;padding:8px 0;color:var(--muted);font-size:0.85rem";
+  } else if (recentTable.caption) recentTable.caption.remove();
 
   els.homeUpcomingBody.innerHTML = upcoming.length
     ? upcoming
@@ -837,9 +840,10 @@ function renderHome(onNavigate) {
         .map((match, index) => {
           const opponentTeam = state.dataset.teams.find((team) => team.team.team_id === match.opponent_team_id);
           const opponentName = opponentTeam?.team?.team_name || match.opponent_team_name || "Opponent";
-          const scoreline = formatScoreline(match.team_score, match.opponent_score);
-          const resultType = match.result_type || "D";
-          const resultLabel = resultType === "W" ? "Won" : resultType === "L" ? "Lost" : "Drew";
+          const recentResult = getRecentResult(match);
+          const resultLabel = recentResult.label;
+          const recentDate = `${formatCompactDateWithWeekday(match.match_date)}${match.completed ? "" : `, ${match.match_date.slice(0, 4)}`}`;
+          const scoreSource = match.score_verification === "public_league" ? "League schedule" : match.score_verification === "public_results" ? "Public history" : "Archive only";
           const mobileDetailId = `home-recent-detail-${index}`;
           const opponentHtml = opponentTeam
             ? `<button type="button" class="table-link name-link" data-team-key="${escapeHtml(opponentTeam.team_key)}">${renderTeamNameBlock(match, { clubClass: "name-club compact", teamClass: "name-team compact" })}</button>`
@@ -847,7 +851,7 @@ function renderHome(onNavigate) {
           return `
             <tr class="home-mobile-summary-row">
               <td>
-                <span class="home-date-inline">${escapeHtml(formatCompactDateWithWeekday(match.match_date))}</span>
+                <span class="home-date-inline">${escapeHtml(recentDate)}</span>
                 <button
                   type="button"
                   class="home-mobile-row-toggle"
@@ -855,35 +859,23 @@ function renderHome(onNavigate) {
                   aria-controls="${escapeHtml(mobileDetailId)}"
                 >
                   <span class="home-mobile-row-main">
-                    <span class="home-mobile-row-date">${escapeHtml(formatCompactDateWithWeekday(match.match_date))}</span>
+                    <span class="home-mobile-row-date">${escapeHtml(recentDate)}</span>
                     <span class="home-mobile-row-team">${escapeHtml(opponentName)}</span>
                   </span>
                   <span class="home-mobile-row-aside">
-                    <span class="compare-result home-result-pill ${
-                      resultType === "W"
-                        ? "compare-result-win"
-                        : resultType === "L"
-                          ? "compare-result-loss"
-                          : "compare-result-draw"
-                    }">${escapeHtml(`${resultType} ${scoreline}`)}</span>
+                    <span class="compare-result home-result-pill ${recentResult.tone}" title="${escapeHtml(recentResult.label)}">${escapeHtml(recentResult.text)}</span>
                   </span>
                 </button>
               </td>
               <td>${opponentHtml}</td>
-              <td><span class="compare-result home-result-pill ${
-                resultType === "W"
-                  ? "compare-result-win"
-                  : resultType === "L"
-                    ? "compare-result-loss"
-                    : "compare-result-draw"
-              }">${escapeHtml(`${resultType} ${scoreline}`)}</span></td>
+              <td><span class="compare-result home-result-pill ${recentResult.tone}" title="${escapeHtml(recentResult.label)}">${escapeHtml(recentResult.text)}</span>${!match.completed ? `<small class="pending-score-source">${escapeHtml(scoreSource)}</small>` : ""}</td>
             </tr>
             <tr class="home-mobile-detail-row" id="${escapeHtml(mobileDetailId)}" hidden>
               <td colspan="3">
                 <div class="home-mobile-detail-card">
                   <div class="home-mobile-detail-header">
                       <div>
-                        <div class="home-mobile-detail-kicker">Recent result</div>
+                        <div class="home-mobile-detail-kicker">${match.completed ? "Recent result" : "Unresolved past game"}</div>
                         <div class="home-mobile-detail-title">${escapeHtml(opponentName)}</div>
                       </div>
                       ${
@@ -895,11 +887,12 @@ function renderHome(onNavigate) {
                   <div class="home-mobile-detail-grid">
                     <div class="home-mobile-detail-block">
                       <span class="home-mobile-detail-label">Result</span>
-                      <span class="home-mobile-detail-value">${escapeHtml(`${anchorName} ${resultLabel} ${scoreline}`)}</span>
+                      <span class="home-mobile-detail-value">${escapeHtml(`${anchorName}: ${resultLabel}`)}</span>
+                      ${!match.completed ? `<span class="home-mobile-detail-value">${match.score_verification === "public_league" ? "Verified against the current league schedule." : match.score_verification === "public_results" ? "Unscored in the latest public match history." : "Archive record; current status needs verification."}</span>` : ""}
                     </div>
                     <div class="home-mobile-detail-block">
                       <span class="home-mobile-detail-label">Date</span>
-                      <span class="home-mobile-detail-value">${escapeHtml(formatCompactDateWithWeekday(match.match_date))}</span>
+                      <span class="home-mobile-detail-value">${escapeHtml(recentDate)}</span>
                     </div>
                   </div>
                 </div>
