@@ -3649,3 +3649,5 @@ tbody td {
   border: 1px solid #d1a34b;
 }
 .pending-score-source { display: block; font-size: 0.72rem; margin-top: 4px; color: var(--muted); }
+.history-view-label { display: inline-block; margin: 10px 8px 0 0; font-size: 0.85rem; color: var(--muted); }
+#home-history-view { margin-top: 10px; padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; color: inherit; background: var(--panel); font: inherit; font-size: 0.85rem; }

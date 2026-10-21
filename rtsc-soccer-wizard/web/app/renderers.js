@@ -114,6 +114,10 @@ function renderDatasetMeta() {
   const coverage = state.dataset?.source_coverage;
   if (coverage) {
     els.datasetMeta.textContent = `${count} tracked teams | results refreshed ${new Date(coverage.results_refreshed_at_utc).toLocaleString()} | league schedule captured ${new Date(coverage.schedule_captured_at_utc).toLocaleString()}`;
+    if (coverage.refreshed_team_count !== undefined) {
+      els.datasetMeta.textContent = `${count} archived teams | ${coverage.refreshed_team_count} refreshed, ${coverage.historical_team_count} historical | latest results capture ${new Date(coverage.results_refreshed_at_utc).toLocaleString()} | league schedule captured ${new Date(coverage.schedule_captured_at_utc).toLocaleString()}`;
+      if (getSelectedTeam()?.is_currently_refreshed === false) els.datasetMeta.textContent += " | Selected opponent: historical data; not refreshed in the latest run.";
+    }
     if (coverage.rankings_status) els.datasetMeta.textContent += ` | ${coverage.rankings_status}`;
   }
   for (const body of [els.homeUpcomingBody, els.upcomingMatchesBody]) {
@@ -719,7 +723,14 @@ function renderHome(onNavigate) {
         .slice(0, 8)
     : [];
 
-  const recent = getRecentGames(impactTeam?.matches || []);
+  const recent = getRecentGames(impactTeam?.matches || [], state.homeHistoryMode === "recent" ? 8 : Infinity);
+  if (els.homeHistoryView) {
+    els.homeHistoryView.value = state.homeHistoryMode || "all";
+    els.homeHistoryView.onchange = () => {
+      state.homeHistoryMode = els.homeHistoryView.value;
+      renderHome(onNavigate);
+    };
+  }
   const unresolved = recent.filter(match => !match.completed);
   const recentTable = els.homeRecentBody.closest("table");
   if (unresolved.length) {
@@ -842,7 +853,7 @@ function renderHome(onNavigate) {
           const opponentName = opponentTeam?.team?.team_name || match.opponent_team_name || "Opponent";
           const recentResult = getRecentResult(match);
           const resultLabel = recentResult.label;
-          const recentDate = `${formatCompactDateWithWeekday(match.match_date)}${match.completed ? "" : `, ${match.match_date.slice(0, 4)}`}`;
+          const recentDate = `${formatCompactDateWithWeekday(match.match_date)}, ${match.match_date.slice(0, 4)}`;
           const scoreSource = match.score_verification === "public_league" ? "League schedule" : match.score_verification === "public_results" ? "Public history" : "Archive only";
           const mobileDetailId = `home-recent-detail-${index}`;
           const opponentHtml = opponentTeam

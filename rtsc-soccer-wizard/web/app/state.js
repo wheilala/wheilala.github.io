@@ -5,6 +5,7 @@ export const state = {
   selectedCalendarAnchors: [],
   filteredTeams: [],
   selectedTeamKey: null,
+  homeHistoryMode: "all",
   mode: "light",
 };
 
@@ -45,6 +46,7 @@ export const els = {
   homePanelCopy: document.getElementById("home-panel-copy"),
   homeUpcomingBody: document.getElementById("home-upcoming-body"),
   homeRecentBody: document.getElementById("home-recent-body"),
+  homeHistoryView: document.getElementById("home-history-view"),
   calendarRangeLabel: document.getElementById("calendar-range-label"),
   calendarCherryGrid: document.getElementById("calendar-cherry-grid"),
   calendarSleightonGrid: document.getElementById("calendar-sleighton-grid"),
