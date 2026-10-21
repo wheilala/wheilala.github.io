@@ -110,6 +110,20 @@ function renderDatasetMeta() {
   const anchorDisplayName = getAnchorMeta()?.display_name || "Local Soccer Wizard";
   const anchorNickname = getAnchorMeta()?.nickname || getAnchorMeta()?.display_name || "Local Soccer Wizard";
   els.datasetMeta.textContent = `${count} tracked teams | refreshed ${generatedAt}`;
+  const coverage = state.dataset?.source_coverage;
+  if (coverage) {
+    els.datasetMeta.textContent = `${count} tracked teams | results refreshed ${new Date(coverage.results_refreshed_at_utc).toLocaleString()} | league schedule captured ${new Date(coverage.schedule_captured_at_utc).toLocaleString()}`;
+    if (coverage.rankings_status) els.datasetMeta.textContent += ` | ${coverage.rankings_status}`;
+  }
+  for (const body of [els.homeUpcomingBody, els.upcomingMatchesBody]) {
+    const table = body?.closest("table");
+    if (!table) continue;
+    if (coverage) {
+      const caption = table.caption || table.createCaption();
+      caption.textContent = coverage.schedule_scope;
+      caption.style.cssText = "caption-side:top;text-align:left;padding:8px 0;color:var(--muted);font-size:0.85rem";
+    } else if (table.caption) table.caption.remove();
+  }
   els.sidebarAnchorName.textContent = getAnchorMeta()?.nickname
     ? `Rose Tree ${getAnchorMeta().nickname}`
     : getAnchorMeta()?.display_name || "";
@@ -429,6 +443,10 @@ function findCoachConflict(match) {
 
   for (const relatedRecord of relatedRecords) {
     const relatedDataset = relatedRecord?.dataset || relatedRecord;
+    if (state.dataset?.source_coverage) {
+      const captured = relatedDataset?.source_coverage?.schedule_captured_at_utc;
+      if (!captured || Date.now() - new Date(captured).getTime() > 86400000) continue;
+    }
     const relationLabel = relatedRecord?.relationLabel || "";
     const relatedAnchorTeam = getAnchorTeamFromDataset(relatedDataset);
     if (!relatedAnchorTeam?.matches) {
@@ -740,6 +758,7 @@ function renderHome(onNavigate) {
               <td>
                 <div class="home-date-stack">
                   <span class="home-date-inline">${escapeHtml(mobileDateTime)}</span>
+                  ${match.notes?.includes("Rescheduled") ? `<span class="home-competition-pill">Rescheduled</span>` : ""}
                   ${competitionType ? `<span class="home-competition-pill home-competition-${escapeHtml(competitionType.key)}">${escapeHtml(competitionType.label)}</span>` : ""}
                   ${coachConflict ? `<span class="home-conflict-note home-conflict-${escapeHtml(coachConflict.severity)}">${escapeHtml(coachConflict.message)}</span>` : ""}
                 </div>
@@ -1215,7 +1234,7 @@ function renderMatches(team, onNavigate) {
 
     return `
       <tr class="team-mobile-summary-row">
-        <td>${escapeHtml(formatDate(match.match_date))}</td>
+        <td>${escapeHtml(formatDate(match.match_date))}${sectionKey === "upcoming" && match.match_time_utc ? `<br>${escapeHtml(formatMatchTime(match.match_time_utc))}` : ""}${match.notes?.includes("Rescheduled") ? "<br>Rescheduled" : ""}</td>
         <td>
           <div class="opponent-cell">
             ${
